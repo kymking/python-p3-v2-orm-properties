@@ -37,14 +37,14 @@ class TestEmployeeProperties:
             employee = Employee.create("Lee", "Manager", department.id)
             employee.name = ''
 
-    def test_location_is_string(self):
+    def test_job_title_is_string(self):
         '''validates job_title property is assigned a string'''
         with pytest.raises(ValueError):
             department = Department.create("Payroll", "Building A, 5th Floor")
             employee = Employee.create("Lee", "Manager", department.id)
             employee.job_title = 7
 
-    def test_location_string_length(self):
+    def test_job_title_string_length(self):
         '''validates job_title property length > 0'''
         with pytest.raises(ValueError):
             department = Department.create("Payroll", "Building A, 5th Floor")
